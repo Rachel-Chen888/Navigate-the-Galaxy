@@ -1,0 +1,56 @@
+.pause-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.75);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 999;
+}
+
+.pause-card {
+  background: rgba(20, 20, 40, 0.95);
+  border: 2px solid #8b5cf6;
+
+  border-radius: 20px;
+
+  padding: 2rem;
+
+  min-width: 300px;
+
+  text-align: center;
+
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+}
+
+.pause-card h2 {
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.pause-card button {
+  width: 100%;
+
+  margin-top: 10px;
+  padding: 12px;
+
+  border: none;
+  border-radius: 10px;
+
+  cursor: pointer;
+
+  font-size: 1rem;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
+}
+
+.pause-card button:hover {
+  transform: translateY(-2px);
+}

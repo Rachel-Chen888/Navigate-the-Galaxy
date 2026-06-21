@@ -1,0 +1,37 @@
+.portal-screen {
+  min-height: 100vh;
+  background: radial-gradient(circle, #7b2ff7, #1a0033, #000);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  overflow: hidden;
+}
+
+.portal {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  border: 10px solid #d8b4ff;
+  box-shadow: 0 0 40px #c084fc, 0 0 90px #9333ea;
+  animation: spinPortal 1.5s linear infinite, pulsePortal 1.2s ease-in-out infinite;
+}
+
+@keyframes spinPortal {
+  from {
+    transform: rotate(0deg) scale(1);
+  }
+  to {
+    transform: rotate(360deg) scale(1.15);
+  }
+}
+
+@keyframes pulsePortal {
+  0%, 100% {
+    box-shadow: 0 0 40px #c084fc;
+  }
+  50% {
+    box-shadow: 0 0 100px #f0abfc;
+  }
+}

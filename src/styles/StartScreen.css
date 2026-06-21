@@ -1,0 +1,64 @@
+.start-screen {
+  min-height: 100vh;
+  background: radial-gradient(circle at top, #312e81, #020617 70%);
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.start-card {
+  width: 100%;
+  max-width: 520px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 25px;
+  padding: 3rem;
+  text-align: center;
+  box-shadow: 0 0 35px rgba(139, 92, 246, 0.45);
+  backdrop-filter: blur(10px);
+}
+
+.start-card h1 {
+  font-size: 3rem;
+  margin-bottom: 0.75rem;
+}
+
+.start-card p {
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.start-card label {
+  display: block;
+  text-align: left;
+  margin: 1rem 0 0.35rem;
+  font-weight: 600;
+}
+
+.start-card select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  font-size: 1rem;
+}
+
+.start-card button {
+  width: 100%;
+  margin-top: 2rem;
+  padding: 14px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: white;
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.start-card button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 22px rgba(168, 85, 247, 0.8);
+}
