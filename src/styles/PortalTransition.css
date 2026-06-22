@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Jacquarda+Bastarda+9&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jacques+Francois+Shadow&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap'); 
+
 .portal-screen {
   min-height: 100vh;
   background: radial-gradient(circle, #7b2ff7, #1a0033, #000);
@@ -34,4 +37,10 @@
   50% {
     box-shadow: 0 0 100px #f0abfc;
   }
+}
+
+.portal-screen h2 {
+  margin-top: 30px;
+  font-size: 2.5rem;
+  font-family: "Jacquarda Bastarda 9", serif !important;
 }

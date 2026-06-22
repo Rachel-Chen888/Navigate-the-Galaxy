@@ -3,7 +3,9 @@ import { useState } from "react";
 function PlanetButton({ planet, isGlowing, onClick, disabled }) {
   const [clicked, setClicked] = useState(false);
 
-  const handleClick = () => {
+  const handleClick = (event) => {
+    event.preventDefault();
+
     if (disabled) return;
 
     setClicked(true);
@@ -16,6 +18,7 @@ function PlanetButton({ planet, isGlowing, onClick, disabled }) {
 
   return (
     <button
+      type="button"
       className={`planet-button ${isGlowing ? "glowing" : ""} ${
         clicked ? "clicked" : ""
       }`}

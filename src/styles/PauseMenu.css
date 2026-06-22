@@ -1,40 +1,35 @@
-.pause-overlay {
+/* .pause-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-
-  background: rgba(0, 0, 0, 0.75);
+  inset: 0;
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  z-index: 999;
+  z-index: 2000;
+
+  background: rgba(0, 0, 0, 0.4);
 }
 
-.pause-card {
-  background: rgba(20, 20, 40, 0.95);
-  border: 2px solid #8b5cf6;
+.pause-menu {
+  width: 500px;
 
-  border-radius: 20px;
+  background: #0f1035;
 
-  padding: 2rem;
+  border: 3px solid #8b5cf6;
+  border-radius: 25px;
 
-  min-width: 300px;
+  padding: 40px;
 
-  text-align: center;
-
-  box-shadow: 0 0 25px rgba(139, 92, 246, 0.6);
+  box-shadow: 0 0 30px #8b5cf6;
 }
 
-.pause-card h2 {
+.pause-menu h2 {
   margin-bottom: 1.5rem;
   color: white;
 }
 
-.pause-card button {
+.pause-menu button {
   width: 100%;
 
   margin-top: 10px;
@@ -51,6 +46,63 @@
   transition: all 0.3s ease;
 }
 
-.pause-card button:hover {
+.pause-menu button:hover {
   transform: translateY(-2px);
+} */
+
+
+/* .pause-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding-top: 70px;
+
+  background: rgba(0, 0, 0, 0.25);
+} */
+
+.pause-overlay {
+  position: fixed !important;
+
+  top: 0 !important;
+  left: 0 !important;
+
+  width: 100vw !important;
+  height: 100vh !important;
+
+  z-index: 99999 !important;
+
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center;
+
+}
+
+.pause-card {
+  width: 520px;
+  background: rgba(92, 64, 51, 0.4);
+  /* border: 3px solid black; */
+  border-radius: 25px;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 35px #9c94af;
+}
+
+.pause-card h2 {
+  color: white;
+  margin-bottom: 30px;
+}
+
+.pause-card button {
+  width: 100%;
+  padding: 18px;
+  margin: 12px 0;
+  border: none;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
 }

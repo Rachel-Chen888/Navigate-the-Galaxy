@@ -40,7 +40,11 @@ function App() {
       )}
 
       {screen === "end" && (
-        <EndScreen scoreData={finalScore} onGoHome={goHome} />
+        <EndScreen
+          scoreData={finalScore}
+          settings={settings}
+          onGoHome={goHome}
+        />
       )}
     </>
   );

@@ -1,8 +1,21 @@
 import "../styles/EndScreen.css";
+import realisticBg from "../assets/planets/real/realistic.jpg";
+import fantasyBg from "../assets/planets/fantasy/fantasy.jpg";
 
-function EndScreen({ scoreData, onGoHome }) {
+
+function EndScreen({ scoreData, settings, onGoHome }) {
+  const backgroundImage =
+  settings?.theme === "fantasy"
+    ? fantasyBg
+    : realisticBg;
+
   return (
-    <div className="end-screen">
+    <div
+      className="end-screen"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+    >
       <div className="end-card">
         <h1>Mission Report</h1>
 

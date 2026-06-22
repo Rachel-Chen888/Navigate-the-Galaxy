@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles:wght@400;700&family=Jacquarda+Bastarda+9&family=Manrope:wght@200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inria+Serif:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Jacques+Francois+Shadow&family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap'); 
+
 .end-screen {
   min-height: 100vh;
 
@@ -16,10 +19,7 @@
   padding: 20px;
 }
 
-.end-card {
-  background: rgba(255, 255, 255, 0.08);
-
-  backdrop-filter: blur(10px);
+.end-card { 
 
   border: 1px solid rgba(255, 255, 255, 0.15);
 
@@ -37,6 +37,7 @@
 
 .end-card h1 {
   font-size: 3rem;
+  font-family: "Jacquarda Bastarda 9", serif;
   margin-bottom: 1rem;
 }
 
@@ -44,7 +45,8 @@
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 
-  color: #c084fc;
+  color: white;
+  background: linear-gradient(135deg, #635955);
 }
 
 .end-card p {
@@ -60,23 +62,55 @@
   border: none;
   border-radius: 12px;
 
-  background: linear-gradient(
-    135deg,
-    #7c3aed,
-    #a855f7
-  );
+  
+  background: linear-gradient(135deg, #635955);
 
   color: white;
 
-  font-size: 1rem;
+  font-size: 1.3rem;
   font-weight: 600;
 
   cursor: pointer;
 
   transition: all 0.3s ease;
+  font-family: "Jacquarda Bastarda 9", serif;
 }
 
 .end-card button:hover {
   transform: translateY(-3px);
   box-shadow: 0 0 20px rgba(168, 85, 247, 0.7);
+}
+
+.end-screen {
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  color: white;
+}
+
+
+/* Overlay */ 
+.end-screen::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(0, 0, 0, 0.45);
+
+  z-index: 0;
+}
+
+.end-card {
+  position: relative;
+  z-index: 1;
 }

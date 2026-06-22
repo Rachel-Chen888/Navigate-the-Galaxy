@@ -6,8 +6,7 @@ export const difficultySettings = {
     baseRouteLength: 3,
     maxRouteLength: 5,
     glowDuration: 1000,
-    gapDuration: 300,
-    mistakesAllowed: 2,
+    gapDuration: 300, 
   },
 
   captain: {
@@ -15,8 +14,7 @@ export const difficultySettings = {
     baseRouteLength: 4,
     maxRouteLength: 6,
     glowDuration: 750,
-    gapDuration: 250,
-    mistakesAllowed: 1,
+    gapDuration: 250, 
   },
 
   admiral: {
@@ -24,8 +22,7 @@ export const difficultySettings = {
     baseRouteLength: 5,
     maxRouteLength: 8,
     glowDuration: 500,
-    gapDuration: 200,
-    mistakesAllowed: 0,
+    gapDuration: 200, 
   },
 };
 

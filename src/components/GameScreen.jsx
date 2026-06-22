@@ -3,6 +3,8 @@ import PlanetButton from "./PlanetButton";
 import PauseMenu from "./PauseMenu";
 import { getPlanets, generateRoute, getRouteLength, getDifficultySettings } from "../utils/gameLogic";
 import "../styles/GameScreen.css";
+import realisticBg from "../assets/planets/real/realistic.jpg";
+import fantasyBg from "../assets/planets/fantasy/fantasy.jpg";
 
 
 function GameScreen({ settings, onEndGame }) {
@@ -16,13 +18,14 @@ function GameScreen({ settings, onEndGame }) {
   const [paused, setPaused] = useState(false);
   const [activePlanetId, setActivePlanetId] = useState(null);
   const planets = getPlanets(settings.theme, settings.level); 
+
+  const difficulty = getDifficultySettings(settings.level); 
   
-  const difficulty = getDifficultySettings(settings.level);
-  const [mistakes, setMistakes] = useState(0);
 
   useEffect(() => {
     startRound();
   }, [round]);
+
 
   const startRound = () => {
     const routeLength = getRouteLength(settings.level, round);
@@ -65,13 +68,7 @@ function GameScreen({ settings, onEndGame }) {
     const currentIndex = newPlayerRoute.length - 1;
 
     if (planet.id !== route[currentIndex].id) {
-      const newMistakes = mistakes + 1;
-      setMistakes(newMistakes);
-
-      if (newMistakes > difficulty.mistakesAllowed) {
-        finishGame(false);
-      }
-
+      finishGame(false);
       return;
     }
 
@@ -93,6 +90,7 @@ function GameScreen({ settings, onEndGame }) {
     }
   };
 
+
   const finishGame = (completed) => {
     onEndGame({
       score,
@@ -101,11 +99,28 @@ function GameScreen({ settings, onEndGame }) {
     });
   };
 
+
+  const backgroundImage =
+  settings.theme === "fantasy"
+    ? fantasyBg
+    : realisticBg;
+
   return (
-    <div className="game-screen">
-      <button className="pause-button" onClick={() => setPaused(true)}>
-        ☰
-      </button>
+    <div
+      className="game-screen"
+      style={{
+        backgroundImage: `url(${backgroundImage})`,
+      }}
+    >
+      <div className="game-header">
+        <div></div>
+
+        <button className="pause-button" onClick={() => setPaused(true)}>
+          Menu
+        </button>
+
+        <h2>Mission {round}</h2>
+      </div>
 
       {paused && (
         <PauseMenu
@@ -120,27 +135,25 @@ function GameScreen({ settings, onEndGame }) {
         />
       )}
 
-      <h2>Mission {round}</h2>
+      <p>
+        {showRoute
+          ? "Memorize the glowing route!"
+          : "Click the planets in the correct order."}
+      </p>
 
-      {showRoute ? (
-        <p>Memorize the glowing route!</p>
-      ) : (
-        <p>Click the planets in the correct order.</p>
-      )}
+      <p>Current Points: {score}</p>
 
       <div className="galaxy-map">
         {planets.map((planet) => (
-        <PlanetButton
-          key={planet.id}
-          planet={planet}
-          isGlowing={showRoute && activePlanetId === planet.id}
-          disabled={showRoute || paused}
-          onClick={handlePlanetClick}
-        />
-      ))}
-      </div>
-
-      <p>Score: {score}</p>
+          <PlanetButton
+            key={planet.id}
+            planet={planet}
+            isGlowing={showRoute && activePlanetId === planet.id}
+            disabled={showRoute || paused}
+            onClick={handlePlanetClick}
+          />
+        ))}
+      </div> 
     </div>
   );
 }
